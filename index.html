@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Visualizador de cores RGB </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <div class="main flex-container">
+
+        <div class="rgb">
+
+            <h4 id="rgbTitle">RGB MAKER</h4>
+
+            <div class="red flex-container">
+                <span>Red:</span>
+                <input style="width: 200px;" 
+                 type="range" min="0" max="255" value="0" name="rangeRed" id="rangeRed" class="slider">
+                <input style="width: 35px;" 
+                 type="text" value="0" id="redValue" readonly disabled>
+            </div>
+            <div class="green flex-container">
+                <span>Green:</span>
+                <input style="width: 200px;" 
+                 type="range" min="0" max="255" value="0" name="rangeGreen" id="rangeGreen" class="slider">
+                <input style="width: 35px;" 
+                 type="text" value="0" id="greenValue" readonly disabled>
+            </div>
+            <div class="blue flex-container">
+                <span>Blue:</span>
+                <input style="width: 200px;" 
+                 type="range" min="0" max="255" value="0" name="rangeBlue" id="rangeBlue" class="slider">
+                <input style="width: 35px;" 
+                 type="text" value="0" id="blueValue" readonly disabled>
+            </div>
+
+            <p>Salve suas cores Favoritas:</p>
+            <input type="button" value="" id="f1" class="favorite" onclick="favorite0();">
+            <input type="button" value="" id="fadd" class="favoriteAdd" onclick="favorite();">
+
+        </div>
+
+        <div id="colorResult"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
