@@ -22,23 +22,21 @@ let r,g,b = 0;
 function start(){
     // Adding the EventListener for all range inputs and call currentValue function
     for(let i = 0; i < range.length; i++){
-        range[i].addEventListener('input', currentValue);
+        range[i].addEventListener('input', () => {
+            //Saving the inputs (range) value
+            r = result[0].value;
+            g = result[1].value;
+            b = result[2].value;
+
+            //Printing the results in the users screen
+            for(let i = 0; i < range.length; i++){
+                result[i].value = range[i].value;
+            }
+
+            //Putting the save values (r,g,b) in the css "result" variable
+            root.style.setProperty('--result', `rgb(${r}, ${g}, ${b})`);
+        });
     }
-}
-
-function currentValue(){
-    //Saving the inputs (range) value
-    r = result[0].value;
-    g = result[1].value;
-    b = result[2].value;
-
-    //Printing the results in the users screen
-    for(let i = 0; i < range.length; i++){
-        result[i].value = range[i].value;
-    }
-
-    //Putting the save values (r,g,b) in the css "result" variable
-    root.style.setProperty('--result', `rgb(${r}, ${g}, ${b})`);
 }
 
 //Favorite colors
